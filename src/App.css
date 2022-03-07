@@ -1,0 +1,180 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 200px;
+  margin: 20px 0;
+  background: #FFC8DD;
+  padding: 30px 0;
+  -webkit-box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  -moz-box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.formList{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.formList input {
+  width: 380px;
+  border: none;
+  outline: none;
+  padding: 8px;
+  text-align: right;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+.filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  background: #ff9bc6;
+  border: 1px solid #ff9bc6;
+  padding: 10px;
+  margin: 30px 5px 0 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.btn:hover{
+  background: #fd5d98;
+  cursor: pointer;
+}
+.btnAll{
+  background: #fd5d98;
+}
+.btnComplete{
+  background: #fd5d98;
+}
+.btnUncompleted{
+  background: #fd5d98;
+}
+
+.btnAdd {
+  width: 20%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -ms-border-radius: 5px 0 0 5px;
+  -o-border-radius: 5px 0 0 5px;
+  background: #FFAFCC;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.btnAdd:hover {
+  cursor: pointer;
+  background: #fa96ba;
+}
+.alert{
+  margin-top: 25px;
+  color: #adadad;
+}
+
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 50px;
+  margin: 10px;
+  /*background: #f0f0f081;
+  */padding: 20px 8px;
+  border: 1px solid #BDE0FE;
+  -webkit-box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  -moz-box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  box-shadow: 8px 8px 54px 1px rgba(138, 138, 138, 0.7);
+  transition: all 0.5s ease-in-out ;
+  -webkit-transition: all 0.5s ease-in-out ;
+  -moz-transition: all 0.5s ease-in-out ;
+  -ms-transition: all 0.5s ease-in-out ;
+  -o-transition: all 0.5s ease-in-out ;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.taskDone{
+  font-style: italic;
+  color:#505050;
+  text-decoration: line-through;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100px;
+}
+.btnTrash{
+  color: rgb(235, 95, 95);
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  font-size: 10px;
+  padding: 0 2px;
+}
+.btnTrash:hover{
+  cursor: pointer;
+  color: rgb(241, 20, 20);
+}
+.btnDone{
+  padding: 0 2px;
+  font-size: 10px;
+}
+.btnDone:hover{
+  cursor: pointer;
+}
+.btnEdit{
+  padding: 0 2px;
+  font-size: 10px;
+}
+.btnEdit:hover{
+  cursor: pointer;
+}
+
+.tik, .noTik{
+  font-size: 18px;
+  color: #c07be9;
+}
+.trash{
+  font-size: 18px;
+}
