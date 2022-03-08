@@ -172,6 +172,10 @@
 }
 
 .tik, .noTik{
+  font-size: 19px;
+  color: #c07be9;
+}
+.iconEdit{
   font-size: 18px;
   color: #c07be9;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { v4 as uuid } from 'uuid'
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
@@ -7,13 +7,19 @@ import { FiEdit, FiTrash } from 'react-icons/fi'
 
 
 function App() {
+
+  const tasksStorage = () => {
+    const tasks = localStorage.getItem('tasks')
+    return tasks ? JSON.parse(tasks) : []
+  }
+
+
   const [task, setTask] = useState('')
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(tasksStorage())
   const [alert, setAlert] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
   const [id, setId] = useState(null)
   const [filter, setFilter] = useState('all')
-
 
 
   const handleAdd = (e) => {
@@ -46,6 +52,11 @@ function App() {
   }
 
 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
+
   const handleRemove = (item) => {
     const card = tasks.filter(card => card !== item)
     setTasks(card)
@@ -68,11 +79,13 @@ function App() {
     setIsEditing(true)
   }
 
+
   const handleCompleted = (e) => {
     setFilter(e.target.dataset['filter'])
   }
 
   let filtered = [...tasks]
+
   switch (filter) {
     case 'all':
       filtered = [...tasks]
@@ -102,7 +115,7 @@ function App() {
           {item.completed ? <MdCheckBox className='tik' /> : <MdCheckBoxOutlineBlank className='noTik' />}
         </button>
         <button className='btnEdit' onClick={() => handleEdit(item)}>
-          <FiEdit className='tik' />
+          <FiEdit className='iconEdit' />
         </button>
       </div>
     </div>
@@ -114,7 +127,12 @@ function App() {
     <div className="App">
       <div className='form'>
         <div className='formList'>
-          <input type='text' placeholder='تسک' value={task} onChange={(e) => setTask(e.target.value)} />
+          <input
+            type='text'
+            placeholder='تسک'
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
           <button className='btnAdd' onClick={handleAdd}>
             {isEditing ? 'ویرایش' : 'افزودن'}
           </button>
