@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { v4 as uuid } from 'uuid'
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
-import { FiEdit, FiTrash } from 'react-icons/fi'
+import { FiEdit, FiTrash, FiEyeOff, FiEye } from 'react-icons/fi'
+import Time from './Time';
 
 
 
@@ -20,6 +21,7 @@ function App() {
   const [isEditing, setIsEditing] = useState(false)
   const [id, setId] = useState(null)
   const [filter, setFilter] = useState('all')
+  const [hidden, setHidden] = useState(false)
 
 
   const handleAdd = (e) => {
@@ -84,6 +86,8 @@ function App() {
     setFilter(e.target.dataset['filter'])
   }
 
+
+
   let filtered = [...tasks]
 
   switch (filter) {
@@ -104,7 +108,10 @@ function App() {
   }
 
 
-  const taskCard = filtered.map((item) => (
+
+
+
+  let taskCard = filtered.map((item) => (
     <div className="card" key={item.id} style={{ background: item.color }}>
       <p className={`${item.completed && "taskDone"}`} >{item.task}</p>
       <div className='wrapper'>
@@ -122,10 +129,19 @@ function App() {
   ))
 
 
+  const handleShow = () => {
+    setHidden(!hidden)
+  }
 
   return (
     <div className="App">
-      <div className='form'>
+      <div className='timeDate'>
+        <Time />
+      </div>
+      <div className={hidden ? 'formBlur' : 'form'}>
+        <div className='hidden' onClick={handleShow}>
+          {hidden ? <> <FiEye className="showEye" />  <p>نشان بده</p></> : <><FiEyeOff className='hiddenEye' />  <p>مخفی کن</p> </>}
+        </div>
         <div className='formList'>
           <input
             type='text'
@@ -161,10 +177,8 @@ function App() {
           </button>
         </div>
         {alert && <h4 className='alert'>لطفا تسک خود را وارد کنید...</h4>}
+        {taskCard.length > 0 ? taskCard : <h5 className='noTask'>شما تسکی ندارید...</h5>}
       </div>
-      <>
-        {taskCard.length > 0 ? taskCard : 'شما تسکی ندارید...'}
-      </>
     </div>
   );
 }

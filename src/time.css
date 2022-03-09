@@ -1,0 +1,23 @@
+.timeCard {
+    background: #FFC8DD;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 20px;
+}
+
+.time {
+    font-size: 58px;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+}
+.day{
+    font-size: 22px;
+    color: rgb(73, 73, 73);
+}
+.date {
+    color: rgb(73, 73, 73);
+}
