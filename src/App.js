@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
 import { FiEdit, FiTrash, FiEyeOff, FiEye } from 'react-icons/fi'
 import Time from './Time';
+import Weather from './Weather';
 
 
 
@@ -135,9 +136,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className='timeDate'>
-        <Time />
-      </div>
       <div className={hidden ? 'formBlur' : 'form'}>
         <div className='hidden' onClick={handleShow}>
           {hidden ? <> <FiEye className="showEye" />  <p>نشان بده</p></> : <><FiEyeOff className='hiddenEye' />  <p>مخفی کن</p> </>}
@@ -178,6 +176,11 @@ function App() {
         </div>
         {alert && <h4 className='alert'>لطفا تسک خود را وارد کنید...</h4>}
         {taskCard.length > 0 ? taskCard : <h5 className='noTask'>شما تسکی ندارید...</h5>}
+      </div>
+      <div style={{display: 'flex'}}>
+        {/* <div className='timeDate'> */}
+          <Time />
+          <Weather />
       </div>
     </div>
   );
